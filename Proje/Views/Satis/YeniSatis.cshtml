@@ -1,0 +1,32 @@
+﻿@model  MvcUrunTakip.Models.Entity.TblSatis
+@{
+    ViewBag.Title = "YeniSatis";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post">
+    <div>
+        <label><b>Ürün Adı</b></label>
+        @Html.DropDownListFor(m => m.TblUrun.id, (List<SelectListItem>)ViewBag.urn, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>Personel Adı Soyadı</b></label>
+        @Html.DropDownListFor(m => m.TblPersonel.id, (List<SelectListItem>)ViewBag.prs, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>Müşteri Adı Soyadı</b></label>
+        @Html.DropDownListFor(m => m.TblMusteri.id, (List<SelectListItem>)ViewBag.mst, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>Satış Fiyat</b></label>
+        @Html.DropDownListFor(m => m.TblUrun.id, (List<SelectListItem>)ViewBag.fyt, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <button class="btn btn-primary">Satış Ekle</button>
+    </div>
+</form>
+

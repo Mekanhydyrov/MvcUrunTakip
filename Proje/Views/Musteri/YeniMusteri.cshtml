@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "YeniMusteri";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post">
+    <div>
+        <label><b>Müşteri Ad</b></label>
+        <input type="text" name="ad" required="" class="form-control" maxlength="30" />
+    </div>
+    <br />
+    <div>
+        <label><b>Müşteri Soyad</b></label>
+        <input type="text" name="soyad" required="" class="form-control" maxlength="30" />
+    </div>
+    <br />
+    <div>
+        <label><b>Müşteri Şehir</b></label>
+        <input type="text" name="sehir" required="" class="form-control" maxlength="20" />
+    </div>
+    <br />
+    <div>
+        <label><b>Müşteri Bakiye</b></label>
+        <input type="text" name="bakiye" required="" class="form-control"/>
+    </div>
+    <br />
+    <div>
+        <button class="btn btn-primary">Müşteri Ekle</button>
+    </div>
+</form>
+

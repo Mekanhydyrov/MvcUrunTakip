@@ -1,0 +1,19 @@
+﻿@model MvcUrunTakip.Models.Entity.TblKategori
+@{
+    ViewBag.Title = "KategoriGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+@using (Html.BeginForm("Guncelle", "Kategori", FormMethod.Post))
+{
+    <div>
+        <label><b>Kategori Adı</b></label>
+        @Html.TextBoxFor(m => m.ad, new { @class = "form-control" })
+    </div>
+    <br />
+    @Html.HiddenFor(m=>m.id)
+    <div>
+        <button class="btn btn-warning">Kategori Güncelle</button>
+    </div>
+}

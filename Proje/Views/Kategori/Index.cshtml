@@ -1,0 +1,27 @@
+﻿@using MvcUrunTakip.Models.Entity
+@model List<TblKategori>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>İD</th>
+        <th>KATEGORİ AD</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    <tbody>
+        @foreach(var ktg in Model)
+        {
+            <tr>
+                <td>@ktg.id</td>
+                <td>@ktg.ad</td>
+                <td><a href="/Kategori/Sil/@ktg.id" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Kategori/KategoriGetir/@ktg.id" class="btn btn-success">Güncelle</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+<a href="/Kategori/YeniKategori" class="btn btn-primary">Yeni Kategori</a>

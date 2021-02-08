@@ -1,0 +1,35 @@
+﻿@model MvcUrunTakip.Models.Entity.TblSatis
+@{
+    ViewBag.Title = "SatisGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Satis", FormMethod.Post))
+{
+    <div>
+        <label><b>Ürün Adı</b></label>
+        @Html.DropDownListFor(m => m.TblUrun.id, (List<SelectListItem>)ViewBag.urn, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>Personel Adı Soyadı</b></label>
+        @Html.DropDownListFor(m => m.TblPersonel.id, (List<SelectListItem>)ViewBag.prs, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>Müşteri Adı Soyadı</b></label>
+        @Html.DropDownListFor(m => m.TblMusteri.id, (List<SelectListItem>)ViewBag.mst, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>Ürün Satış Fiyatı</b></label>
+        @Html.DropDownListFor(m => m.TblUrun.SatisFiyat, (List<SelectListItem>)ViewBag.fyt, new { @class = "form-control" })
+    </div>
+    <br />
+    @Html.HiddenFor(m=>m.id)
+    <div>
+        <button class="btn btn-warning">Satış Güncelle</button>
+    </div>
+
+}
+

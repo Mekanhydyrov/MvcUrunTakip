@@ -1,0 +1,42 @@
+﻿@model MvcUrunTakip.Models.Entity.TblUrun
+@{
+    ViewBag.Title = "YeniUrun";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<form method="post">
+    <div>
+        <label><b>Ürün Adı</b></label>
+        <input type="text" name="ad" required="" maxlength="50" class="form-control"/>
+    </div>
+    <br />
+    <div>
+        <label><b>Marka</b></label>
+        <input type="text" name="marka" required="" maxlength="50" class="form-control"/>
+    </div>
+    <br />
+    <div>
+        <label><b>Ürün Stok Sayısı</b></label>
+        <input type="text" name="stok" required="" class="form-control" />
+    </div>
+    <br />
+    <div>
+        <label><b>Alış Fiyat</b></label>
+        <input type="text" name="AlisFiyat" required="" class="form-control"/>
+    </div>
+    <br />
+    <div>
+        <label><b>Satış Fiyat</b></label>
+        <input type="text" name="SatisFiyat" required="" class="form-control"/>
+    </div>
+    <br />
+    <div>
+        <label><b>Ürün Kategori</b></label>
+       @Html.DropDownListFor(m=>m.TblKategori.id, (List<SelectListItem>)ViewBag.dgr, new {@class="form-control" })
+    </div>
+    <br />
+    <div>
+        <button class="btn btn-primary">Ürün Ekle</button>
+    </div>
+</form>
+

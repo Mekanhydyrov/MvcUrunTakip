@@ -1,0 +1,44 @@
+﻿@model MvcUrunTakip.Models.Entity.TblUrun
+@{
+    ViewBag.Title = "UrunGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Urun", FormMethod.Post))
+{
+    <div>
+        <label><b>Ürün Adı</b></label>
+        @Html.TextBoxFor(m => m.ad, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>Marka</b></label>
+        @Html.TextBoxFor(m => m.marka, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>Stok</b></label>
+        @Html.TextBoxFor(m => m.stok, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>Ürün Alış Fiyat</b></label>
+        @Html.TextBoxFor(m => m.AlisFiyat, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>Ürün Satış Fiyat</b></label>
+        @Html.TextBoxFor(m => m.SatisFiyat, new { @class = "form-control" })
+    </div>
+    <br />
+    <div>
+        <label><b>Ürün Adı</b></label>
+        @Html.DropDownListFor(m => m.TblKategori.id,(List<SelectListItem>)ViewBag.ktg, new {@class="form-control" })
+    </div>
+    <br />
+    @Html.HiddenFor(m=>m.id)
+    <div>
+      <button class="btn btn-warning">Ürün Güncelle</button>
+    </div>
+}
+

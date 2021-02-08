@@ -1,0 +1,36 @@
+﻿@using MvcUrunTakip.Models.Entity
+@model List<TblSatis>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>İD</th>
+        <th>ÜRÜN</th>
+        <th>PERSONEL</th>
+        <th>MÜSTERİ</th>
+        <th>FİYAT</th>
+        <th>TARIH</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    <tbody>
+        @foreach(var sts in Model)
+        {
+        <tr>
+            <td>@sts.id</td>
+            <td>@sts.TblUrun.ad</td>
+            <td>@sts.TblPersonel.ad @sts.TblPersonel.soyad</td>
+            <td>@sts.TblMusteri.ad @sts.TblMusteri.soyad</td>
+            <td>@sts.fiyat</td>
+            <td>@sts.tarih</td>
+            <td><a href="/Satis/Sil/@sts.id" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Satis/SatisGetir/@sts.id" class="btn btn-success">Güncelle</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
+<a href="/Satis/YeniSatis" class="btn btn-info">Yeni Satış</a>
+
